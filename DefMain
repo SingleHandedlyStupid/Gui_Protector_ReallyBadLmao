@@ -1,0 +1,22 @@
+local simple_protect = {}
+
+function simple_protect:Getcg(): "CoreGui"
+	return game:GetService("CoreGui")
+end
+
+function g()
+	return ("aopqcblmnghituvwxyzjkrsdef"):sub(1,math.random(12,26)):reverse()
+end
+
+function simple_protect:ProtectGUI(ui:ScreenGui,type)
+	if type=="Core" then
+		ui.Parent = simple_protect:Getcg()
+	elseif type=="Named" then
+		ui.Parent=game.Players.LocalPlayer.PlayerGui
+		ui.Name = g() .. g()
+	end
+end
+
+--ui: ScreenGui, type: StringType ("Core" or "Named")
+
+return simple_protect
