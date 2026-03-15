@@ -4,8 +4,14 @@ function simple_protect:Getcg(): Instance
 	return game:GetService("CoreGui")
 end
 
-function g()
-	return ("aopqcblmnghituvwxyzjkrsdef"):sub(1,math.random(12,26)):reverse()
+function g(len)
+	local sta = "aopqcblmnghituvwxyzjkrsdef"
+	local string = ""
+	for i=1,(len or 1) do
+	local r = math.random(1,#sta)
+	string..=sta:sub(r,r)
+	end
+	return string
 end
 
 --ui: ScreenGui, type: StringType ("Core" or "Named")
