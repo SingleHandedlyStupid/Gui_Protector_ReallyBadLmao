@@ -7,7 +7,7 @@ end
 function g(len)
 	local sta = "aopqcblmnghituvwxyzjkrsdef"
 	local string = ""
-	for i=1,(len or 1) do
+	for i=1,(len or math.random(12,24)) do
 	local r = math.random(1,#sta)
 	string..=sta:sub(r,r)
 	end
